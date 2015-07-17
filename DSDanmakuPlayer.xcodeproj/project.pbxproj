@@ -13,6 +13,9 @@
 		E26D46681B56660F0040B678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E26D46671B56660F0040B678 /* Images.xcassets */; };
 		E26D466B1B56660F0040B678 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E26D46691B56660F0040B678 /* LaunchScreen.xib */; };
 		E26D46771B56660F0040B678 /* DSDanmakuPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D46761B56660F0040B678 /* DSDanmakuPlayerTests.swift */; };
+		E26D46811B5667490040B678 /* DSDanmakuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D46801B5667490040B678 /* DSDanmakuView.swift */; };
+		E26D46831B56676D0040B678 /* DSDanmakuLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D46821B56676D0040B678 /* DSDanmakuLabel.swift */; };
+		E26D46881B566A510040B678 /* DSDanmakuDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D46871B566A510040B678 /* DSDanmakuDefines.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		E26D46701B56660F0040B678 /* DSDanmakuPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DSDanmakuPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26D46751B56660F0040B678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E26D46761B56660F0040B678 /* DSDanmakuPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSDanmakuPlayerTests.swift; sourceTree = "<group>"; };
+		E26D46801B5667490040B678 /* DSDanmakuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSDanmakuView.swift; sourceTree = "<group>"; };
+		E26D46821B56676D0040B678 /* DSDanmakuLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSDanmakuLabel.swift; sourceTree = "<group>"; };
+		E26D46871B566A510040B678 /* DSDanmakuDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSDanmakuDefines.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,9 @@
 			children = (
 				E26D46601B56660F0040B678 /* AppDelegate.swift */,
 				E26D46621B56660F0040B678 /* ViewController.swift */,
+				E26D46801B5667490040B678 /* DSDanmakuView.swift */,
+				E26D46821B56676D0040B678 /* DSDanmakuLabel.swift */,
+				E26D46871B566A510040B678 /* DSDanmakuDefines.swift */,
 				E26D46641B56660F0040B678 /* Main.storyboard */,
 				E26D46671B56660F0040B678 /* Images.xcassets */,
 				E26D46691B56660F0040B678 /* LaunchScreen.xib */,
@@ -213,7 +222,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E26D46631B56660F0040B678 /* ViewController.swift in Sources */,
+				E26D46811B5667490040B678 /* DSDanmakuView.swift in Sources */,
+				E26D46881B566A510040B678 /* DSDanmakuDefines.swift in Sources */,
 				E26D46611B56660F0040B678 /* AppDelegate.swift in Sources */,
+				E26D46831B56676D0040B678 /* DSDanmakuLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,9 +352,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DSDanmakuPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -350,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DSDanmakuPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
