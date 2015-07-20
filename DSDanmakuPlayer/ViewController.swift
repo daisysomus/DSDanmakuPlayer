@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        danmakuView = DSDanmakuView(frame: CGRectMake(0, 20, CGRectGetWidth(self.view.frame), 100))
+        danmakuView = DSDanmakuView(frame: CGRectMake(0, 20, CGRectGetWidth(self.view.frame), 200))
         self.view.addSubview(danmakuView!)
     }
     

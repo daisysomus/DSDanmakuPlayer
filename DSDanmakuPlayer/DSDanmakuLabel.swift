@@ -37,8 +37,8 @@ class DSDanmakuLabel: UILabel {
 
     func startPlay(complete:(Bool) -> Void) {
         
-        UIView.animateWithDuration(remainTime, animations: { () -> Void in
-            self.frame = CGRectMake(-CGRectGetWidth(self.frame), CGRectGetMinY(self.frame), CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))
+        UIView.animateKeyframesWithDuration(remainTime, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
+             self.frame = CGRectMake(-CGRectGetWidth(self.frame), CGRectGetMinY(self.frame), CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))
         }, completion: complete)
     }
     
