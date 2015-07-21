@@ -25,9 +25,8 @@ class DSDanmakuView: UIView {
         var danmakuLabel = DSDanmakuLabel(danmakuText:text, font:font, color:color)
         
         var point = self.countAvailablePositionForDanmaku(danmakuLabel)
-        println("point \(point) \(text)")
         danmakuLabel.setPosition(point)
-        
+        danmakuLabel.calculateReaminTime((Double)(CGRectGetWidth(self.frame)))
         
         self.addSubview(danmakuLabel)
         self.playDanmaku(danmakuLabel)
@@ -57,6 +56,9 @@ class DSDanmakuView: UIView {
         danmaku.startPlay({(complete:Bool) -> Void in
             if (complete) {
                 danmaku.removeFromSuperview()
+                if let index = find(wself!.movingDanmaku, danmaku) {
+                    wself!.movingDanmaku.removeAtIndex(index)
+                }
             }
         })
     }
@@ -65,22 +67,29 @@ class DSDanmakuView: UIView {
         var x = CGRectGetWidth(self.frame)
         var y = CGFloat(0.0)
         var rect = CGRectMake(x, y, CGRectGetWidth(danmaku.frame), CGRectGetHeight(danmaku.frame))
-        var found = false
         var intersect:DSDanmakuLabel?
         var intersectY = CGFloat(0.0)
         do {
             if let value = intersect {
-                rect.origin.x = CGRectGetMaxX(value.layer.presentationLayer().frame) + 50
                 rect.origin.y = intersectY
+                if (rect.origin.y + CGRectGetHeight(danmaku.frame) > CGRectGetHeight(self.frame)) {
+                    rect.origin.y = 0.0
+                    rect.origin.x = CGRectGetMaxX(value.layer.presentationLayer().frame) + 20
+                }
                 intersect = nil
             }
-            for existDanmaku:DSDanmakuLabel in movingDanmaku {
+            var index:Int
+            for index = 0; index < movingDanmaku.count; index++ {
+                var existDanmaku = movingDanmaku[index]
                 var compareRect = existDanmaku.layer.presentationLayer().frame
-                if (CGRectIntersectsRect(rect, compareRect)) {
+                if (CGRectGetMaxX(compareRect) < CGRectGetMaxX(self.frame)) {
+                    
+                    continue
+                }
+                if (CGRectIntersectsRect(compareRect, rect)) {
                     if intersect == nil {
                         intersect = existDanmaku
                         intersectY = CGRectGetMaxY(existDanmaku.frame)
-                        
                     }
                     rect.origin.y += CGRectGetHeight(rect)
                 }

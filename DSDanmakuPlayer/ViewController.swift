@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     }
     
     func startTimer() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timeOUt:", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "timeOUt:", userInfo: nil, repeats: true)
     }
     
     func timeOUt(timer:NSTimer) {

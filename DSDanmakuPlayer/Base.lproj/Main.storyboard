@@ -22,7 +22,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="72" y="169" width="30" height="30"/>
+                                    <rect key="frame" x="77" y="271" width="30" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="pauseAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NIW-4R-fqE"/>
@@ -34,7 +34,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="239" y="169" width="30" height="30"/>
+                                    <rect key="frame" x="223" y="271" width="30" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="startAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zI6-TS-YlZ"/>

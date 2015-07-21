@@ -34,18 +34,21 @@ class DSDanmakuLabel: UILabel {
         self.frame = CGRectMake(position.x, position.y, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))
         originalXPosition = position.x
     }
+    
+    func calculateReaminTime(standWidth:Double) {
+        remainTime = (NSTimeInterval)(CGRectGetMaxX(self.frame) + CGRectGetWidth(self.frame)) * remainTime/standWidth
+    }
 
     func startPlay(complete:(Bool) -> Void) {
-        
-        UIView.animateKeyframesWithDuration(remainTime, delay: 0.0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: { () -> Void in
-             self.frame = CGRectMake(-CGRectGetWidth(self.frame), CGRectGetMinY(self.frame), CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))
+        UIView.animateWithDuration(remainTime, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            self.frame = CGRectMake(-CGRectGetWidth(self.frame), CGRectGetMinY(self.frame), CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))
         }, completion: complete)
     }
     
     func pauseAnimation() {
         self.frame = self.layer.presentationLayer().frame
         var ratio = (NSTimeInterval)((CGRectGetMinX(self.frame) + CGRectGetWidth(self.frame))/(originalXPosition + CGRectGetWidth(self.frame)))
-        remainTime = DSDanmakuAnimationInterval * ratio
+        remainTime = remainTime * ratio
         self.layer.removeAllAnimations()
     }
 }
