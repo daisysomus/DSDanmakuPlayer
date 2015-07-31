@@ -12,12 +12,15 @@ class DSDanmakuLabel: UILabel {
     
     var remainTime = NSTimeInterval(DSDanmakuAnimationInterval)
     var originalXPosition = CGFloat(0.0)
+    
+    var attribute:DSSanmakuAttribute = DSSanmakuAttribute()
 
-    init(danmakuText:String, font:UIFont, color:UIColor) {
+    init(danmakuText:String, attribute:DSSanmakuAttribute) {
+        
+        self.attribute = attribute
         super.init(frame:CGRectZero)
         self.text = danmakuText
-        self.font = font
-        self.textColor = color
+        
         self.configLabel()
     }
 
@@ -26,7 +29,8 @@ class DSDanmakuLabel: UILabel {
     }
     
     func configLabel() {
-        
+        self.textColor = attribute.color;
+        self.font = attribute.font
         self.sizeToFit()
     }
     

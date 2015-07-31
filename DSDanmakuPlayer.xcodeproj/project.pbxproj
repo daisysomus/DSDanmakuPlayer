@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E220C92E1B69F30300E3D066 /* DSSanmakuAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E220C92D1B69F30300E3D066 /* DSSanmakuAttribute.swift */; };
 		E26D46611B56660F0040B678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D46601B56660F0040B678 /* AppDelegate.swift */; };
 		E26D46631B56660F0040B678 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D46621B56660F0040B678 /* ViewController.swift */; };
 		E26D46661B56660F0040B678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26D46641B56660F0040B678 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E220C92D1B69F30300E3D066 /* DSSanmakuAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSSanmakuAttribute.swift; sourceTree = "<group>"; };
 		E26D465B1B56660F0040B678 /* DSDanmakuPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSDanmakuPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26D465F1B56660F0040B678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E26D46601B56660F0040B678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				E26D469E1B5CB5B90040B678 /* DSDanmakuDefines.swift */,
 				E26D469F1B5CB5B90040B678 /* DSDanmakuLabel.swift */,
 				E26D46A01B5CB5B90040B678 /* DSDanmakuView.swift */,
+				E220C92D1B69F30300E3D066 /* DSSanmakuAttribute.swift */,
 			);
 			path = DSDanmakuPlayer;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E220C92E1B69F30300E3D066 /* DSSanmakuAttribute.swift in Sources */,
 				E26D46A31B5CB5B90040B678 /* DSDanmakuView.swift in Sources */,
 				E26D46A11B5CB5B90040B678 /* DSDanmakuDefines.swift in Sources */,
 				E26D46631B56660F0040B678 /* ViewController.swift in Sources */,
@@ -432,6 +436,7 @@
 				E26D467C1B56660F0040B678 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E26D467D1B56660F0040B678 /* Build configuration list for PBXNativeTarget "DSDanmakuPlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +445,7 @@
 				E26D467F1B56660F0040B678 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

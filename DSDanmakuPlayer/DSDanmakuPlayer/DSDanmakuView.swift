@@ -21,8 +21,8 @@ class DSDanmakuView: UIView {
         super.init(coder: aDecoder)
     }
     
-    func addDanmaku(text:String, font:UIFont, color:UIColor) {
-        var danmakuLabel = DSDanmakuLabel(danmakuText:text, font:font, color:color)
+    func addDanmaku(text:String, attribute:DSSanmakuAttribute) {
+        var danmakuLabel = DSDanmakuLabel(danmakuText:text, attribute:attribute)
         
         var point = self.countAvailablePositionForDanmaku(danmakuLabel)
         danmakuLabel.setPosition(point)
@@ -33,9 +33,9 @@ class DSDanmakuView: UIView {
         self.addMovingDanmaku(danmakuLabel)
     }
     
-    func addDanmakus(textsArray:[String], font:UIFont, color:UIColor) {
+    func addDanmakus(textsArray:[String], attrbute:DSSanmakuAttribute) {
         for text in textsArray {
-            self.addDanmaku(text, font: font, color: color)
+            self.addDanmaku(text, attribute:attrbute)
         }
     }
     

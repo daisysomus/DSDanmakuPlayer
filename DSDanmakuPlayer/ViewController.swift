@@ -33,16 +33,22 @@ class ViewController: UIViewController {
     }
     
     func startTimer() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "timeOUt:", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timeOut:", userInfo: nil, repeats: true)
     }
     
-    func timeOUt(timer:NSTimer) {
+    func timeOut(timer:NSTimer) {
         var index = random() % danmakuTest.count
+        
         var red = CGFloat(random()%255)/255.0
         var green = CGFloat(random()%255)/255.0
         var blue = CGFloat(random()%255)/255.0
-        var fontSize = CGFloat(random()%10 + 14)
-        danmakuView!.addDanmaku(danmakuTest[index], font:UIFont.systemFontOfSize(fontSize), color:UIColor(red: red, green: green, blue: blue, alpha: 1.0))
+        var color = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+        
+        var font = UIFont.systemFontOfSize(CGFloat(random()%10 + 14))
+        
+        var attribute = DSSanmakuAttribute(color:color, font:font)
+        
+        danmakuView!.addDanmaku(danmakuTest[index], attribute: attribute)
     }
     @IBAction func pauseAction(sender: AnyObject) {
         danmakuView!.pause()
